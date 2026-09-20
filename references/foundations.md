@@ -89,3 +89,27 @@ The paper relates mechanics, runtime dynamics, and the desired experience it cal
 Choose the uncertainty first, then a reference that helps investigate it. For a simple question, one lens may be sufficient. Combine a lens with a [classic case](../examples/README.md) only when the case shares a meaningful mechanism with the current problem.
 
 When a detailed factual claim requires more than these summaries, inspect the linked primary material or the relevant game build. Report the exact access boundary. Keep inaccessible content explicitly unverified.
+
+## Appearance, use, and meaning — Don Norman
+
+**Reference:** *Emotional Design: Why We Love (or Hate) Everyday Things*. The author's overview and contents distinguish visceral, behavioral, and reflective levels. [REF-09](sources.md#ref-09)
+
+**Use when:** an intention such as cozy, premium, personal, or satisfying is being reduced to surface styling.
+
+**Miles asks:** What first impression is intended? What happens while the player uses it? What personal meaning could remain afterward? Which of those is actually supported by this design?
+
+**Boundary:** These questions are original applications of a conceptual lens. A color, animation, or object carries no guaranteed emotional response. The overview and contents were inspected; the full book was not read for this release.
+
+## Discover, define, develop, deliver — Design Council
+
+**Reference:** *The Double Diamond*. The Council describes understanding a problem, defining it, developing alternatives, and testing solutions at a small scale. [REF-10](sources.md#ref-10)
+
+**Use when:** a team is choosing a detailed implementation before making the problem and intended experience understandable.
+
+**Miles asks:** Which assumption about the problem needs examination? What alternatives expose a meaningful tradeoff? What small experiment can change our judgment?
+
+**Boundary:** Use iteration proportional to the decision. The framework supplies a process lens; it establishes no particular game's success.
+
+## How these references relate to V2
+
+Miles's Goal → Quality → Concept → Function → Properties/Rules → Validation chain is an original working synthesis. MDA helps connect rule systems and experience; Norman helps distinguish operation, understanding, and meaning; Fullerton and empirical playtesting help investigate the resulting hypotheses. Sources support the named ideas, while the package's exact terminology, checklists, and worked designs remain original adaptations.

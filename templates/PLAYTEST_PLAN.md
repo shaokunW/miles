@@ -1,44 +1,52 @@
-# Playtest Plan — [Question]
+# Playtest Plan — [Experience question]
 
 Project ID:
-Build / variant:
-Date:
+Build / variant / date:
+Related goal, quality, concept, rule, and decision:
 Research question:
-Design hypothesis:
-Evidence that would challenge it:
+Design hypothesis and mechanism:
+Plausible alternative explanation:
+Evidence that would challenge the hypothesis:
+
+## Implementation readiness
+
+Relevant acceptance checks and execution status:
+Known build issues that could confound the test:
+Required prototype fidelity for this question:
 
 ## Participants and setup
 
-Relevant audience and prior knowledge:
-Recruitment and sample rationale:
-Device / input / access settings:
+Relevant audience, prior knowledge, access needs, and recruitment rationale:
+Sample size and limits appropriate to this question:
+Device / input / viewport / sound / motion settings:
 Participant permission and minimal data to collect:
 
 ## Task and procedure
 
-Task goal, without revealing the desired input:
+Natural task goal that leaves the solution undisclosed:
 Starting state and eligibility:
-Moderator behavior and assistance rules:
+Moderator behavior, assistance recording, and stop conditions:
 Concurrent think-aloud or retrospective questions, with reason:
-Stop conditions:
+Neutral questions about interpretation and feeling:
 
 ## Observation and instrumentation
 
-Independent success definition:
-Mistaken attempts and recovery:
-Assistance records:
-Questions asked afterward:
-Events and exact trigger definitions:
-Denominator / window for any rates:
-Proposed targets, separate from observed results:
+Independent completion definition:
+Mistaken interpretation, attempts, recovery, and assistance:
+Behavior relevant to the quality, with competing explanations:
+Player accounts and context:
+Events, exact trigger definitions, uniqueness, and variant:
+Denominator / observation window for any rate:
+Proposed targets and rationale, separate from observed results:
 
 ## Results — complete only after running
 
-Sample and actual setup:
+Execution status: Pending
+Actual sample and setup:
+Implementation anomalies:
 Observed behavior:
 Player accounts:
-Measured results:
-Uncertainty and alternative explanations:
+Measured results and limitations:
 Hypothesis outcome: Supported within scope / Weakened / Inconclusive
-Recommended revision:
+Recommended revision and affected dependencies:
 Related decision and approval status:

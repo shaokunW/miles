@@ -1,23 +1,17 @@
 # Optional repository instruction snippet
 
-A developer can add the following block to the active game's existing agent instructions. Review the project's actual paths first. Preserve existing instructions and higher-priority requirements.
+Adapt the following to the repository's existing instructions and actual record paths. It supplies a workflow reminder within the host's existing permissions.
 
-```md
-## Game experience design
-
-Use `miles-game-experience-designer` for game UX, onboarding, interactions,
-player journeys, feedback, progression, and experience tradeoffs.
-
-Identify the active game root before reading or writing project memory.
-Read that game's `MILES_PROJECT_CONTEXT.md` and relevant entries in
-`MILES_DECISIONS.md` before asking for established facts. If this project
-names equivalent authoritative files, use those paths instead.
-
-Keep current hypotheses and local proposals separate from confirmed rules.
-Promote explicitly confirmed, reusable decisions only within their approved
-scope. Preserve decision history and report actual persistent changes.
-Follow repository write permissions. When writes are unavailable, provide
-proposed changes and state that they remain unsaved.
+```text
+For game-experience design, use $miles-game-experience-designer.
+Identify the active game and read its authoritative project context and decisions.
+Establish or reuse a connected understanding of the game before substantive design.
+Translate broad intentions into goals, qualities, concepts, responsibilities, and
+executable rules. Explain how project conditions affect those choices.
+Propose concrete interpretations so the developer can judge player experiences
+and tradeoffs without supplying specialist vocabulary.
+Keep implementation acceptance separate from player-experience validation.
+Preserve accepted experience models inside the existing Project Context, with
+approval and empirical evidence kept distinct. Reuse confirmed answers and scope.
+Keep current proposals outside confirmed rules. Apply only authorized file changes.
 ```
-
-This snippet does not install the skill, grant write access, or create project facts.

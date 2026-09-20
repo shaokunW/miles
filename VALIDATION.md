@@ -1,23 +1,33 @@
-# Release validation — 1.0.0
+# Release validation — 2.0.0
 
 Date: 2026-09-20
-Environment: Python 3.13.5, Linux authoring environment.
+Python used: 3.13.5
 
-## Completed checks
+## Checks completed
 
-- Package-specific structural validation: passed. Required files, metadata, local Markdown file links, template fields, and evaluation records were checked.
-- Standard-library unit tests: **26 passed**. Coverage includes empty initialization, dry run, existing and legacy records, repeat runs, project boundaries, symlink handling, partial failure cleanup, concurrent file preservation, CLI behavior, and validator failure detection.
-- Main skill size: **183 lines**, excluding no content; within the referenced format's recommended 500-line limit.
+- Package-specific validator: **Passed**. It checks 44 required files, the package's frontmatter/UI metadata conventions, local Markdown file links, template interfaces, and behavioral-fixture structure.
+- Standard-library unit tests: **38 passed**. The 26 retained tests cover safe initialization and package validation; 12 added tests cover V2 metadata, model/handoff template sections, fixture counts/version/status, duplicate IDs, text expectations, tool-citation markers, and escaping links.
+- Behavioral fixture definitions: **36 cases**. Their JSON structure is checked; their execution status remains `not_run`.
+- Cross-file review: checked the three knowledge objects, experience-model placement, scope/approval/evidence separation, condition-to-consequence reasoning, novice collaboration, distinct acceptance/research tracks, and upgrade instructions.
+- Distribution: ZIP contains one `miles-game-experience-designer` root and 44 regular files. Bytecode caches and preparation scripts are excluded. Archive extraction, content equality, validator, and all unit tests are checked on the extracted copy before delivery.
 
-## Scope of this result
+## Evidence boundaries
 
-These checks validate the bundled files and helper scripts in the stated environment. They do not execute a model or test players. The **20 behavioral scenarios** are authored acceptance fixtures and remain **unexecuted against a live agent** in this release record.
+The automated checks execute deterministic helper scripts and inspect package files. They do not run an agent, evaluate a real game's design, or observe players. All **36 behavioral scenarios remain unexecuted against a live host/model**. The original worked examples report no implementation or player-test results.
 
-The source registry documents the material manually inspected during preparation. The local validator performs no network requests and does not certify future URL availability, cross-host behavior, accessibility compliance, or player outcomes.
+A passing template-heading check establishes the template interface, not semantic design quality. Compatibility with the documented directory format does not certify behavior in every skill host. The initializer is tested locally on the stated Python version; Python 3.10+ compatibility is the code's intended requirement, not a multi-version certification.
 
-To rerun the local checks from the skill directory:
+## References
+
+V2 reopened Agent Skills packaging, OpenAI's skill documentation, the Fullerton book overview, and XAG 103. It added the author overview/contents for Norman's Emotional Design and the Design Council's Double Diamond description. Other source-access notes are inherited from the supplied V1.1 registry; full books, linked recordings, and legacy PDF sources were not freshly reviewed for V2. See [Sources](references/sources.md).
+
+## Reproduce the deterministic checks
+
+From the extracted skill directory:
 
 ```bash
 python3 scripts/validate_skill.py
 python3 -m unittest discover -s tests -v
 ```
+
+For actual agent testing, use [evals/README.md](evals/README.md), retain responses and file diffs, and report host/model/settings and case-level evidence separately.

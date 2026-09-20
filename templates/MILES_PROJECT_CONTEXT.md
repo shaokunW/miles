@@ -13,37 +13,47 @@ Decision history: [MILES_DECISIONS.md](MILES_DECISIONS.md)
 Authority for confirmation: Unspecified
 Additional authoritative sources: Unspecified
 
-This file holds confirmed current project facts and intended rules. Record implementation observations with their build and evidence when needed. Keep proposals and inferred player behavior in the current brief or a proposed decision.
+Keep confirmed conditions, accepted intentions, predicted effects, and observed outcomes explicitly distinguished. Store candidate models in the current brief or proposed decisions. Record the experience model here once accepted; keep its causal predictions labeled with their evidence status.
 
-## Confirmed project model
+## Shared game understanding
 
-### Product and delivery
+Pending. Add an accepted, connected explanation of who plays, their role in the world, their repeated activities and choices, intended satisfactions, supporting-system relationships, and delivery implications. Reference its sources and scope. Reuse existing confirmed understanding.
 
-Unspecified. Relevant fields may include platforms, inputs, display, sessions, network constraints, release scope, and production constraints.
+## Project conditions and implications
 
-### Players
+Unspecified. Consider product/input/display, audience/play setting, theme/identity, loops/resources, world/camera, interaction/visual/system language, access needs, and delivery constraints. Develop only useful relationships; keep consequential structural unknowns visible.
 
-Unspecified. Relevant fields may include audience, experience, motivations, access needs, and play setting. Distinguish adopted audience assumptions from research findings.
+| ID | Condition and kind | Source / confirmation | Applies to | Effect on design / predicted player consequence | Evidence / check |
+|---|---|---|---|---|---|
+| Add an actual entry when established | | | | | |
 
-### Core experience and creative pillars
+An adopted audience assumption remains labeled as an assumption. Implementation observations include a build. A condition's confirmation leaves its predicted effect separately open to investigation.
 
-Unspecified. Relevant fields may include genre, identity, fantasy, theme, emotional intent, and aesthetic direction.
+## Accepted experience model
 
-### Loops, systems, and progression
+No model accepted yet. Populate only the accepted portions. Use the project's ordinary language and a few stable identifiers where links help. A compact model can be prose; these tables are optional.
 
-Unspecified. Relevant fields may include core actions, supporting loops, resources and their meanings, growth, content, and business constraints.
+### Goals and qualities
 
-### World and spatial structure
+| ID | Player situation and intended outcome | Quality and concrete definition | Manifestation / tension | Confirmation and scope | Evidence status / research link |
+|---|---|---|---|---|---|
+| Add an actual goal or quality when accepted | | | | | |
 
-Unspecified. Relevant fields may include camera, navigation, characters, NPCs, interactable objects, and scene organization.
+### Organizing concepts and player understanding
 
-### Interaction and communication language
+Accepted design concept and representative player moment: Pending.
+Choices it guides and tradeoffs it resolves: Pending.
+Player's intended conceptual model of roles, actions, and consequences: Pending.
+Related goal/quality IDs, confirmation source, scope, and research status: Pending.
 
-Unspecified. Relevant fields may include learned controls and signals for goals, availability, feedback, reward, risk, locks, completion, and growth.
+### Functional responsibilities and reusable rules
 
-### Shared experience principles
+| ID | Element / mode | Responsibility | Rule or property relationship | Goal / concept link | Confirmation, scope, and evidence |
+|---|---|---|---|---|---|
+| Add an accepted reusable relationship | | | | | |
 
-Unspecified. Add only confirmed, scoped conventions useful across future work.
+Predicted mechanism and alternative explanation: Pending.
+Review triggers / affected dependencies: Pending.
 
 ## Active rule register
 
@@ -52,18 +62,25 @@ No confirmed rules yet.
 For each added rule use:
 
 - ID: CTX-###
-- Statement: A current project fact or intended rule.
-- Kind: Confirmed constraint / Confirmed design intent / Other explicitly identified evidence.
-- Scope: Product / System, with the named area.
+- Statement: An accepted condition, intention, or reusable rule.
+- Kind: Constraint / Design intent / Adopted assumption / Explicitly identified evidence.
+- Scope: Product / System, naming the affected area.
 - Applies to: Exact release, platform, mode, feature, or audience boundary.
-- Source: Explicit approval reference or authoritative project document and section.
-- Confirmed on: YYYY-MM-DD.
-- Related decision: DEC-###, when applicable.
-- Review trigger: A known scope change or “No trigger specified.”
+- Source and confirmed on: Authority, reference, and YYYY-MM-DD.
+- Experience rationale: Goal, quality, concept, or functional responsibility it serves.
+- Predicted effect and evidence status: Keep explanation and demonstrated outcome distinct.
+- Related decision / research: Links or IDs, when applicable.
+- Review trigger: A known scope change, contrary evidence, or “No trigger specified.”
+
+Use one authoritative entry for each rule. Other sections summarize or link it.
+
+## Evidence register
+
+No research recorded. Link actual studies or implementation observations with build, method, sample/settings, finding, and limitations. Reserve detailed notes and any consented participant data for the project's appropriate research records.
 
 ## Open questions
 
-None recorded. Keep unresolved items separate from confirmed rules.
+None recorded. List only consequential unresolved items, their affected decisions, and how they could be resolved. Keep them separate from confirmed rules.
 
 ## Update history
 

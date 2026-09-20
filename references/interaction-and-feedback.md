@@ -39,3 +39,9 @@ Apply the principle to this project: pair a color with a shape or label, make es
 Does the clearer cue reveal a puzzle answer or simply reveal an available action? Does stronger feedback interrupt repeated play? Does an extra confirmation prevent a costly error or burden a harmless action? Does a compact layout preserve accurate interaction on the target device?
 
 A good recommendation states which tradeoff matters and how the prototype will test it. Conceptual reference: [Norman and Nielsen](foundations.md). Counterexample to “clarity removes difficulty”: [Into the Breach](../examples/classics/into-the-breach.md).
+
+## V2: function before presentation
+
+For each signal, identify the responsibility it serves: object identity, interaction capability, current state, consequence, atmosphere, or personal expression. Describe its role in the actual mode. Then choose properties and channels that serve the accepted experience concept.
+
+Review camera, world, and UI together using [Visual and spatial language](visual-spatial-language.md). Trace important choices through [Experience modeling](experience-modeling.md); preserve alternative channels for essential information and deliberate ambiguity where it serves the game.

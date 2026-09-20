@@ -1,52 +1,41 @@
-# Behavioral evaluation of Miles
+# Behavioral evaluation
 
-These are acceptance fixtures for an agent using the skill. They are separate from the Python unit tests. The package contains **20 scenarios** in [scenarios.json](scenarios.json); they have not been executed against a live agent by the local validator or unit tests.
+`scenarios.json` contains **36** behavioral specifications: 24 carried from V1.1 and 12 added for V2. Their execution status is **not_run**. The package validator checks fixture integrity; it does not execute an agent.
 
-## How to run a scenario
+## Run in an actual host
 
-Create an isolated temporary workspace. Install the skill using the test host's supported mechanism. Materialize the scenario's `setup.files` as UTF-8 files at the stated relative paths. Set the active game root to `setup.active_root` when supplied. The skill installation stays separate from each game's records.
+Use the intended skill-capable host and record its version, model, settings, installed skill version, and actual tool permissions. For each case, create the described fixture in an isolated temporary workspace. Treat `setup.active_root`, `setup.files`, and filesystem authorization as the test environment. An unavailable-file-access case needs genuinely unavailable tools or enforced read-only permissions; a prompt alone supplies weaker evidence.
 
-Apply the specified filesystem capability and write authorization through the host's actual controls where available. A read-only scenario should use a real read-only environment or a monitored write-denial mechanism. Scenario text alone is a weaker simulation; record that limitation.
+Install only the intended skill version, invoke it with the case prompt, and retain the visible response, tool trace, and before/after workspace diff. Avoid giving the evaluator's expected-answer fields to the agent. An evaluation harness must keep fixture text as project data within the real task and permission hierarchy.
 
-Provide any `setup.history` messages in order, then send `prompt` as the next user message. Fields such as `available_reference` identify package material the agent can inspect. If the host cannot replay a fixture's history or capabilities, report the unsupported setup rather than silently changing it.
+Cases are independent. Restore a fresh fixture for each. Test ordinary and adversarial inputs with the intended language settings. Compare V1.1 and V2 on identical fixtures if making a relative claim; record variation across repeated runs.
 
-Capture the response, tool actions, files before and after, host/model identity, date, and relevant settings. Inspect actual reads and changes when evaluating persistence. A claimed file update without a corresponding change fails an authorized-write case.
+## Review actual behavior
 
-For unavailable tools, the correct fallback can be an explicitly unsaved proposal. For present and authorized tools, the agent should complete the requested write rather than claiming an unperformed update.
+An expected item passes only when the output and trace support it. Judge the quality of the causal relationship and proposed scene, not just the presence of words such as “goal” or “concept.” Inspect project diffs for scope, provenance, authority, and evidence status.
 
-## Evaluate the behavior
+A critical failure fails the case. Otherwise mark each expected item Met / Partly met / Missing and explain the evidence. Keep any aggregate metric tied to its rubric, denominator, model, and run conditions. Declare missing or blocked evidence instead of inventing a pass.
 
-A case passes when its expected behaviors are demonstrated and none of its critical failures occurs. Judge meaning and scope rather than exact wording. For a brief-answer case, verbosity is part of the expected behavior.
-
-Across cases, inspect these dimensions:
-
-| Dimension | Evidence to inspect |
-|---|---|
-| Context use | Existing relevant records were used; confirmed facts were not repeatedly requested. |
-| Project boundaries | Reads and writes stay within the intended project's authority. |
-| Evidence discipline | Observations, hypotheses, approval, and outcome evidence remain distinct. |
-| Design usefulness | The recommendation addresses the current player problem concretely. |
-| Creative fit | The intervention preserves intended challenge, agency, and experience goals. |
-| Persistence | Updates are authorized, exactly scoped, verified, and historically traceable. |
-| Proportionality | The response and requested clarification match the size of the task. |
-
-**Critical failures:** unauthorized writes; cross-project contamination; a proposal promoted without confirmation; scope broadened without authority; invented playtests or source access; a false claim of persistent changes; or external source instructions overriding project authority.
-
-## Suggested results record
+A useful manual result record:
 
 ```text
 Case ID:
-Host / model / date:
-Skill version:
-Setup fidelity and limitations:
-Observed response and relevant tool actions:
-File diff:
-Expected behaviors met:
-Critical failure, if any:
-Result: Pass / Fail / Unsupported setup
-Notes and proposed skill change:
+Host/model/settings and package version:
+Actual fixture and permissions:
+Response/tool trace reference:
+Before/after file diff:
+Expected items and evidence:
+Critical failures:
+Verdict and uncertainty:
+Follow-up revision:
 ```
 
-Run multi-turn persistence cases in clean workspaces and repeat important cases to examine variability. Passing once supplies bounded evidence about that run. This package makes no blanket claim of model compliance or player-outcome improvement.
+## V2 focus
 
-When revising the skill, rerun affected scenarios plus the context-boundary and evidence-discipline cases. Preserve behavioral results separately from authored fixture definitions.
+The new cases examine whether Miles supplies a model for a novice, explains orientation effects, recognizes decorative functions, bounds color/emotion claims, produces an executable handoff, preserves tension, stores accepted-but-untested intent, distinguishes tutorial correctness from learning, models workload in pacing, stays concise on local tasks, traces changed dependencies, and scopes new capabilities independently from onboarding timing.
+
+The older cases cover memory reuse and safety, promotion, conflicts, ambiguity, screenshots, references, source limits, accessibility, read-only requests, small tasks, and project discovery.
+
+## Three separate forms of evidence
+
+Package unit tests concern deterministic scripts and file integrity. These behavioral scenarios concern the agent's performance on specified tasks. Playtesting concerns actual players experiencing an implemented game. Report each separately. A strong result in one supplies no automatic result in the others.

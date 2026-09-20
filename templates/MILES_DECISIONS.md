@@ -31,11 +31,17 @@ Evidence status: Untested / Qualitative evidence / Quantitative evidence / Mixed
 
 **Alternatives:** Meaningful options considered, when useful.
 
+**Experience trace:** Related goal, quality, concept, functional responsibility, and rule/property. Link the current model IDs when available.
+
+**Condition and mechanism:** Which project condition changes the player situation, and how; label predicted effects.
+
 **Rationale:** Expected player experience and decisive tradeoff.
 
 **Costs and risks:** Production and experience consequences.
 
-**Validation:** Hypothesis, method, and revision signal; link actual findings separately.
+**Implementation acceptance:** Required checks, execution status, and result links.
+
+**Experience validation:** Hypothesis, alternative explanation, method, and revision signal; link actual findings separately.
 
 **Confirmation:** Who or which authoritative record confirmed what, and when. Use “Pending” for a proposal.
 

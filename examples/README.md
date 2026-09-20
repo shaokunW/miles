@@ -22,3 +22,17 @@ Each classic case separates a sourced description from a Miles interpretation, a
 [Tactical UI review](worked/tactical-ui-review.md) shows a concise response that preserves strategic difficulty and distinguishes a screenshot observation from a behavioral hypothesis.
 
 Read one relevant example when it improves the current design. Copy its reasoning structure selectively; derive mechanics, numbers, and audience assumptions from the actual project.
+
+## Discovery before a design proposal
+
+[Project discovery](worked/project-discovery.md) shows an original fictional first engagement: synthesize the game, resolve consequential intent, derive onboarding, and scope a later feature request.
+
+## V2: experience modeling and executable handoff
+
+[Craft-shop experience model](worked/craft-shop-experience-model.md) turns a broad feeling into defined qualities, a coordinating concept, functional responsibilities, visual/spatial/pacing rules, and separate checks. All project facts are fictional.
+
+[Workstation handoff](worked/workstation-handoff.md) narrows that model to a prototype-ready external-team brief, with exact state behavior, provisional values, scope exclusions, recovery, and acceptance cases. No build or test is claimed.
+
+[Quiet-horror experience model](worked/quiet-horror-experience-model.md) applies the same method to deliberate tension and environmental ambiguity while preserving tool understanding.
+
+A recommended reading path for an unfamiliar developer is Discovery → Craft-shop model → Workstation handoff. Use the horror example to check that the method preserves a different creative intent.

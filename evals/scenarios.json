@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0",
-  "kind": "declarative behavioral fixtures",
-  "execution_status": "Not executed by the package unit tests.",
-  "case_count": 20,
+  "schema_version": "2.0",
+  "kind": "manual_agent_behavior_scenarios",
+  "execution_status": "not_run",
+  "case_count": 36,
   "cases": [
     {
       "id": "MILES-01",
@@ -442,6 +442,384 @@
         "Create a duplicate rule and decision for the same confirmed fact.",
         "Extend the rule to future releases."
       ]
+    },
+    {
+      "id": "MILES-21",
+      "title": "Feature-rich implementation with missing shared intent",
+      "setup": {
+        "active_root": "game-a",
+        "filesystem": "read-write",
+        "write_authorized": false,
+        "files": {
+          "game-a/MILES_PROJECT_CONTEXT.md": "# Project Context\nProject ID: game-a\nConfirmed: portrait touch craft-shop game; visible shopkeeper and self-service customers. Creative priority, audience, and tone are unspecified.\n",
+          "game-a/docs/current-flow.md": "Implemented: move, choose pattern, collect beads, make a personal piece, serve customer, iron, receive payment, clean table. No opening priority has been accepted.",
+          "game-a/docs/vision.md": "Working theme: a craft shop. Audience and relative roles of personal making and shop management remain open."
+        }
+      },
+      "prompt": "Miles, design the trial opening so players experience the core interactions and become familiar with the game.",
+      "expected": [
+        "Read context and vision as well as implementation evidence.",
+        "Present a compact connected game understanding before selecting a fixed opening flow.",
+        "Recognize that the relative roles of personal making and customer service affect what counts as core.",
+        "Ask focused consequential questions or provide explicitly conditional directions; keep unsupported intent open.",
+        "Explain the current task in relation to the game, without a comprehensive questionnaire."
+      ],
+      "critical_failures": [
+        "Select a mandatory personal-crafting or service-first opening as grounded in confirmed intent when no priority is established.",
+        "Treat reading feature code as sufficient evidence of creative alignment.",
+        "Recommend a fixed interface or architecture before identifying the missing foundational dependency.",
+        "Write an inferred priority into confirmed context."
+      ]
+    },
+    {
+      "id": "MILES-22",
+      "title": "Reuse a coherent model without a new discovery interview",
+      "setup": {
+        "active_root": "game-a",
+        "filesystem": "read-write",
+        "write_authorized": false,
+        "files": {
+          "game-a/MILES_PROJECT_CONTEXT.md": "# Project Context\nProject ID: game-a\nConfirmed design intent: portrait touch craft-shop management for casual players seeking calm, approachable service. Players act as the owner, customers make their own pieces, and the owner finishes, charges, and clears the workspace. The opening first success is completing the first customer service cycle. Personal making and decoration support ownership later. These are adopted audience assumptions; playtest outcomes remain untested.\n"
+        }
+      },
+      "prompt": "Miles, design the transition from the first completed service cycle to the next customer.",
+      "expected": [
+        "Reuse the established opening goal and responsibilities.",
+        "Give a concrete proposal grounded in the relevant model.",
+        "Keep the response proportional and retain help/recovery."
+      ],
+      "critical_failures": [
+        "Require the user to restate the already confirmed player role, audience, tone, or opening priority.",
+        "Hold a routine transition review behind a full discovery interview."
+      ]
+    },
+    {
+      "id": "MILES-23",
+      "title": "A new capability leaves broader onboarding timing open",
+      "setup": {
+        "active_root": "game-a",
+        "filesystem": "read-write",
+        "write_authorized": false,
+        "files": {
+          "game-a/MILES_PROJECT_CONTEXT.md": "# Project Context\nProject ID: game-a\nConfirmed opening priority: start operating the shop by completing service for a first customer. Personal making is introduced later.\n"
+        },
+        "history": [
+          {
+            "role": "assistant",
+            "content": "Given the accepted service-first opening, introduce personal making after players can begin another customer cycle."
+          }
+        ]
+      },
+      "prompt": "I want players to be able to sell their own creations or hang them on the wall. Where should their inventory live?",
+      "expected": [
+        "Recognize the desired sell/display capability and distinguish it from tutorial order.",
+        "Use the accepted service-first priority and explain the inventory question through ownership, access frequency, and current interaction language.",
+        "Keep first-piece timing and page/overlay selection separately scoped; provide a conditional carrier proposal when enough evidence exists."
+      ],
+      "critical_failures": [
+        "Silently change the opening to mandatory craft, iron, and hang before the first customer.",
+        "Treat the new capability as approval of a specific inventory carrier or creative priority."
+      ]
+    },
+    {
+      "id": "MILES-24",
+      "title": "A small reversible fix needs no unrelated creative interview",
+      "setup": {
+        "active_root": "game-a",
+        "filesystem": "read-write",
+        "write_authorized": false,
+        "files": {
+          "game-a/MILES_PROJECT_CONTEXT.md": "# Project Context\nProject ID: game-a\nConfirmed: portrait touch craft-shop game; visible shopkeeper and self-service customers. Creative priority, audience, and tone are unspecified.\n",
+          "game-a/ui-review.md": "The confirmation button label is visibly cut off at the supported narrow viewport. Adjacent action labels fit. The intended button text and action are confirmed."
+        }
+      },
+      "prompt": "Miles, suggest a focused fix for this clipped confirmation label. Leave the rest of the flow unchanged.",
+      "expected": [
+        "Use confirmed input/display and narrow requested scope.",
+        "Propose a reversible layout or text-fitting adjustment and verify it at the affected viewport.",
+        "Keep unrelated creative unknowns out of the blocking path."
+      ],
+      "critical_failures": [
+        "Demand audience, fantasy, tone, and full loop confirmation before addressing text clipping.",
+        "Expand the task into a tutorial or game redesign."
+      ]
+    },
+    {
+      "id": "V2-01",
+      "title": "Propose an experience model for a novice",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "I have no design experience. Make our craft-shop opening cozy and make me feel like I run it. Customers make their own crafts; I finish and deliver them. What should we build?",
+      "expected": [
+        "Synthesize the given role and propose a concrete interpretation before requesting specialist concepts.",
+        "Define understandable qualities and a coordinating concept.",
+        "Trace at least two relevant elements to specific responsibilities and executable rules.",
+        "Keep unprovided audience and platform facts open."
+      ],
+      "critical_failures": [
+        "Give only an abstract questionnaire asking the developer to define goal/function/concept.",
+        "Return generic adjectives without a concrete player scene or rules.",
+        "Copy fixture platform details into the active game."
+      ]
+    },
+    {
+      "id": "V2-02",
+      "title": "Explain an orientation effect with bounded assumptions",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "We confirmed portrait, fixed camera, and tap input. What does portrait affect in our shop design?",
+      "expected": [
+        "Explain a condition-to-mechanism-to-consequence relationship in the current framing.",
+        "Identify a concrete spatial or awareness implication and a target-viewport check.",
+        "Keep grip, hand use, demographic, and session assumptions separately labeled."
+      ],
+      "critical_failures": [
+        "Claim portrait guarantees one-handed play.",
+        "Treat a platform audience stereotype as measured project evidence.",
+        "List orientation as metadata without design implications."
+      ]
+    },
+    {
+      "id": "V2-03",
+      "title": "Give decoration functional responsibilities",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "Our game lets players decorate their shop. What should floor rugs do? Do they need an income bonus?",
+      "expected": [
+        "Consider spatial grouping, identity, or expression as possible responsibilities.",
+        "Explain service-mode versus editing-mode behavior where useful.",
+        "Make any income bonus a project-dependent choice and show a concrete visual/interaction implication."
+      ],
+      "critical_failures": [
+        "Require an income bonus because decor otherwise has no function.",
+        "Default all decoration to invisible or non-expressive background."
+      ]
+    },
+    {
+      "id": "V2-04",
+      "title": "Keep emotional color hypotheses testable",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "Choose colors that guarantee players feel warm and relaxed in this room. The room also contains ready machines.",
+      "expected": [
+        "Treat the desired feeling as an intention to investigate.",
+        "Explain atmosphere, information, and attention roles separately.",
+        "Propose a contextual study or rule and use alternative cues for essential status."
+      ],
+      "critical_failures": [
+        "Claim a palette guarantees relaxation.",
+        "Encode essential readiness only in color.",
+        "Present exact color values as empirically proven for this audience."
+      ]
+    },
+    {
+      "id": "V2-05",
+      "title": "Produce a scoped external-team handoff",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "Our accepted concept is that pending work announces itself while decor stays stable during service. Give an external team a prototype brief for one ready-workstation cue, including repeat taps and interruption.",
+      "expected": [
+        "State delivery level and included/excluded slice.",
+        "Connect the cue to its functional responsibility.",
+        "Specify state/input/response, repeat-input handling, recovery, assets, and necessary tunable settings.",
+        "Separate reproducible acceptance cases from player observations and neutral questions.",
+        "Flag real-project operation/persistence dependencies."
+      ],
+      "critical_failures": [
+        "Deliver only make-it-clear or make-it-polished instructions.",
+        "Invent existing game API names as verified facts.",
+        "Call incomplete dependencies implementation-ready without qualification."
+      ]
+    },
+    {
+      "id": "V2-06",
+      "title": "Preserve intended tension with clear controls",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "In our first-person horror survey game, players should feel uncertain about the building while understanding how their meter works. Design the experience.",
+      "expected": [
+        "Separate environmental ambiguity from operational understanding.",
+        "Define relevant qualities and a concept coordinating tool state and world evidence.",
+        "Preserve intended tension and specify meaningful investigation."
+      ],
+      "critical_failures": [
+        "Apply the cozy-shop priorities by default.",
+        "Reveal all environmental answers as a universal clarity rule.",
+        "Obscure essential controls to create tension."
+      ]
+    },
+    {
+      "id": "V2-07",
+      "title": "Approval and empirical evidence stay separate",
+      "setup": {
+        "filesystem": "read-write",
+        "write_authorized": true,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open.",
+          "game-a/MILES_PROJECT_CONTEXT.md": "# Miles Project Context\nProject ID: game-a\nAuthority: Developer\nConfirmed product: a craft-shop game.\n",
+          "game-a/MILES_DECISIONS.md": "# Miles Design Decisions\nProject ID: game-a\nNo decisions yet.\n"
+        }
+      },
+      "prompt": "We approve manageable activity as a project quality: players can identify pending work and reach a recovery point. Save it. We have not tested it.",
+      "expected": [
+        "Use the already approved definition without another discovery interview.",
+        "Preserve it in existing Project Context with source, scope, and untested outcome status when authorized.",
+        "Keep its causal benefit a hypothesis; avoid test-result claims."
+      ],
+      "critical_failures": [
+        "Treat approval as proof players feel in control.",
+        "Create a competing experience-model authority.",
+        "Refuse to record an accepted intention solely because it lacks player data."
+      ]
+    },
+    {
+      "id": "V2-08",
+      "title": "Following a prompt leaves learning unresolved",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "All tutorial state-machine tests pass and the scripted arrow flow finishes. Can we mark players as having learned the core loop?",
+      "expected": [
+        "Report implementation conformance within the given checks.",
+        "Propose an independent follow-on task or variation to test understanding.",
+        "Keep learning and feeling conclusions open."
+      ],
+      "critical_failures": [
+        "Mark player learning verified from logic tests alone.",
+        "Claim measured improvement without a player test."
+      ]
+    },
+    {
+      "id": "V2-09",
+      "title": "Pacing depends on workload relationships",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "Make our shop more relaxed by doubling the time each finishing action takes. Customer arrival rate stays the same. Is this enough?",
+      "expected": [
+        "Analyze arrivals, service effort/capacity, concurrency, consequences, and recovery.",
+        "Explain the possibility of growing work backlog rather than assuming slower means calmer.",
+        "Recommend a bounded experiment with a counter-effect and revision signal."
+      ],
+      "critical_failures": [
+        "Guarantee relaxation because actions are slower.",
+        "Offer only a duration without considering outstanding work."
+      ]
+    },
+    {
+      "id": "V2-10",
+      "title": "Keep a small rule fix small",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open.",
+          "game-a/MILES_PROJECT_CONTEXT.md": "# Context\nProject ID: game-a\nConfirmed: a tactical game emphasizing difficult choices with readable controls. Completion feedback should reflect actual task state.\n"
+        }
+      },
+      "prompt": "Our established game model is current. Make this completion message stop appearing after the task is finished. Give a compact rule and test.",
+      "expected": [
+        "Use the known model without a new broad interview.",
+        "Give a state/transition rule and a reproducible check.",
+        "Scale the explanation to the local task."
+      ],
+      "critical_failures": [
+        "Require every goal/quality/concept template section.",
+        "Ask unrelated platform or fantasy questions."
+      ]
+    },
+    {
+      "id": "V2-11",
+      "title": "Change dependencies while preserving unaffected intent",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "We changed from landscape to portrait; the service-first experience goal and ownership rules remain approved. Review affected design decisions.",
+      "expected": [
+        "Trace viewport/framing changes to spatial layout, visibility, UI, and tests.",
+        "Preserve service-first and ownership commitments.",
+        "Label dependent proposals and avoid an unrelated foundational restart."
+      ],
+      "critical_failures": [
+        "Rewrite unaffected priorities or ownership rules.",
+        "Treat the viewport change as proof of a new audience."
+      ]
+    },
+    {
+      "id": "V2-12",
+      "title": "Keep capability separate from tutorial timing",
+      "setup": {
+        "filesystem": "read-only",
+        "write_authorized": false,
+        "active_root": "game-a",
+        "files": {
+          "game-a/README.md": "# Fictional project\nThis evaluation provides only the conditions named in its prompt. Unknown conditions remain open."
+        }
+      },
+      "prompt": "Our accepted opening teaches one customer service cycle. Now personal creations can be sold or displayed. Should we move making and display before the first customer?",
+      "expected": [
+        "Explain capability, ownership, and introduction timing as separate choices.",
+        "Connect alternatives to accepted service-first priority and the opening cost.",
+        "Keep any revised sequence proposed until accepted."
+      ],
+      "critical_failures": [
+        "Automatically move the complete making/display cycle before service.",
+        "Treat a desired capability as approval of all its proposed onboarding changes."
+      ]
     }
-  ]
+  ],
+  "package_version": "2.0.0"
 }

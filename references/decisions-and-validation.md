@@ -16,6 +16,8 @@ Describe eligibility, states, perceptible signals, inputs, transitions, conseque
 
 Flag engineering dependencies rather than assuming them: transaction guarantees, save boundaries, concurrent tasks, timing sources, network failure, and accessibility settings. Distinguish design requirements from one possible implementation.
 
+For an external-team specification, follow [Implementation handoff](implementation-handoff.md) and its separate acceptance/experience tracks.
+
 Use [DESIGN_BRIEF.md](../templates/DESIGN_BRIEF.md) when the work benefits from a durable brief. A small UI question usually needs a much smaller answer.
 
 ## A testable hypothesis
@@ -57,3 +59,9 @@ Separate a proposed target from a baseline and an observed result. Report uncert
 An experiment can support, weaken, or leave a hypothesis unresolved. Record the result with its limits, revise the recommendation when warranted, and obtain confirmation for consequential rule changes. Preserve the original decision's rationale and link the new evidence.
 
 Use [PLAYTEST_PLAN.md](../templates/PLAYTEST_PLAN.md) for a reusable test record. Behavioral acceptance tests for Miles itself live in [evals](../evals/README.md).
+
+## V2: tie a decision to an experience model
+
+Reference the applicable goal, defined quality, organizing concept, and functional responsibility. Explain the condition-to-mechanism-to-consequence link that justifies the rule. A decision can support several goals while imposing a cost on another; retain that tension in its rationale.
+
+Report two independent outcomes. Implementation acceptance says whether the specified states and behavior are correct. Experience validation says what was observed and reported by the tested players under the recorded conditions. Correct implementation leaves the experience hypothesis open until examined. A successful session supports only conclusions warranted by its method and sample.

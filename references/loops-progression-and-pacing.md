@@ -37,3 +37,13 @@ Connect escalating demands with opportunities to understand consequences. Make r
 Can the player explain what has improved? Does the new system create a useful decision? Can they recover when resources or plans go wrong? What does a returning player remember? Do players stop from satisfaction, confusion, interruption, or exhaustion?
 
 Measure those questions separately. Business metrics can inform priorities, while causality and player benefit require appropriate evidence. Keep reward odds, purchase consequences, and time commitments legible when those systems are in scope.
+
+## V2: translate a pacing adjective into design variables
+
+Begin with the intended situation: manageable activity, sustained pressure, suspenseful waiting, deliberate planning, or recovery. Define what that quality means for these players. Then trace its mechanism through arrival patterns, required actions, service effort, concurrent demands, predictability, delay consequences, and opportunities to pause or recover.
+
+“Slower” leaves these relationships unspecified. A longer service action can increase a queue when arrivals are unchanged. A shorter action can increase repetitive input. Treat each adjustment as a hypothesis, with a plausible counter-effect and a scenario to inspect.
+
+A useful handoff distinguishes arrival cadence, task concurrency, input burden, urgency, and recovery. State units and provisional tuning values when needed. Inspect both steady play and bursts. Evaluate startup, ordinary activity, peak demand, completion, and return after interruption.
+
+Connect automation to the responsibility that remains: planning, diagnosis, choice, expression, or expansion. Check whether the resulting play still serves the agreed goal. See [Experience modeling](experience-modeling.md) for the full trace.

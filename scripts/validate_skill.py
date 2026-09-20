@@ -16,21 +16,27 @@ from typing import Sequence
 from urllib.parse import unquote, urlsplit
 
 NAME = "miles-game-experience-designer"
+VERSION = "2.0.0"
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = (
     "SKILL.md", "README.md", "agents/openai.yaml", "CHANGELOG.md",
-    "references/project-context.md", "references/player-experience.md",
+    "references/project-context.md", "references/project-understanding.md", "references/player-experience.md",
     "references/onboarding.md", "references/interaction-and-feedback.md",
     "references/loops-progression-and-pacing.md", "references/decisions-and-validation.md",
     "references/foundations.md", "references/sources.md", "examples/README.md",
     "examples/classics/super-mario-bros-1-1.md", "examples/classics/portal-companion-cube.md",
     "examples/classics/breath-of-the-wild.md", "examples/classics/journey.md",
     "examples/classics/into-the-breach.md", "examples/classics/factorio.md",
-    "examples/worked/first-expansion.md", "examples/worked/context-lifecycle.md",
+    "examples/worked/first-expansion.md", "examples/worked/project-discovery.md", "examples/worked/context-lifecycle.md",
     "examples/worked/tactical-ui-review.md", "templates/MILES_PROJECT_CONTEXT.md",
     "templates/MILES_DECISIONS.md", "templates/DESIGN_BRIEF.md", "templates/PLAYTEST_PLAN.md",
     "templates/AGENTS_SNIPPET.md", "scripts/init_project.py", "scripts/validate_skill.py",
-    "tests/test_init_project.py", "evals/scenarios.json", "evals/README.md",
+    "tests/test_init_project.py", "evals/scenarios.json", "evals/README.md", "VALIDATION.md", "MIGRATION.md",
+    "references/experience-modeling.md", "references/visual-spatial-language.md",
+    "references/implementation-handoff.md", "templates/IMPLEMENTATION_HANDOFF.md",
+    "examples/worked/craft-shop-experience-model.md",
+    "examples/worked/workstation-handoff.md",
+    "examples/worked/quiet-horror-experience-model.md", "tests/test_v2_integrity.py",
 )
 LINK = re.compile(r"\[[^\]\n]*\]\(([^\s)]+)(?:\s+\"[^\"]*\")?\)")
 
@@ -74,8 +80,8 @@ def validate(root: Path) -> list[str]:
                 errors.append("Skill name and parent directory must match the package name.")
             if not desc or not (1 <= len(desc.group(1)) <= 1024):
                 errors.append("Description must be a nonempty single line of at most 1024 characters.")
-            if not version or version.group(1) != "1.0.0":
-                errors.append("Expected metadata.version 1.0.0 in the package convention.")
+            if not version or version.group(1) != VERSION:
+                errors.append(f"Expected metadata.version {VERSION} in the package convention.")
         if len(text.splitlines()) >= 500:
             errors.append("Keep SKILL.md below 500 lines.")
 
@@ -131,8 +137,15 @@ def validate(root: Path) -> list[str]:
             errors.append(f"Invalid evaluation JSON: {exc}")
         else:
             cases = data.get("cases") if isinstance(data, dict) else None
-            if not isinstance(cases, list) or len(cases) < 12:
-                errors.append("Provide at least 12 behavioral evaluation cases.")
+            if isinstance(data, dict):
+                if data.get("package_version") != VERSION:
+                    errors.append("Evaluation package_version must match this release.")
+                if isinstance(cases, list) and data.get("case_count") != len(cases):
+                    errors.append("Evaluation case_count must equal the actual case count.")
+                if data.get("execution_status") != "not_run":
+                    errors.append("Bundled evaluation specifications must retain not_run status; store run results separately.")
+            if not isinstance(cases, list) or len(cases) < 36:
+                errors.append("Provide at least 36 behavioral evaluation cases.")
             else:
                 seen: set[str] = set()
                 for case in cases:
@@ -151,6 +164,27 @@ def validate(root: Path) -> list[str]:
                         errors.append(f"Evaluation {ident}: expected must be a list.")
                     if not isinstance(case.get("critical_failures"), list):
                         errors.append(f"Evaluation {ident}: critical_failures must be a list.")
+                    for key in ("expected", "critical_failures"):
+                        values = case.get(key)
+                        if isinstance(values, list) and any(
+                            not isinstance(value, str) or not value.strip() for value in values
+                        ):
+                            errors.append(f"Evaluation {ident}: {key} entries must be nonempty strings.")
+
+    # These are template interface checks, not assessments of design quality.
+    template_contracts = {
+        "MILES_PROJECT_CONTEXT.md": ("## Accepted experience model", "## Project conditions and implications"),
+        "DESIGN_BRIEF.md": ("## Implementation acceptance", "## Experience validation"),
+        "IMPLEMENTATION_HANDOFF.md": ("## 5. Implementation acceptance", "## 6. Experience validation"),
+        "PLAYTEST_PLAN.md": ("## Implementation readiness", "## Results — complete only after running"),
+    }
+    for name, headings in template_contracts.items():
+        path = root / "templates" / name
+        if path.is_file():
+            text = path.read_text(encoding="utf-8")
+            for heading in headings:
+                if heading not in text.splitlines():
+                    errors.append(f"Missing template section {heading}: {name}")
     return errors
 
 

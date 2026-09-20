@@ -8,12 +8,18 @@ Identify the active game root using the task, repository instructions, and exist
 
 Default records at the active game root:
 
-- `MILES_PROJECT_CONTEXT.md`: current confirmed facts and intended rules.
+- `MILES_PROJECT_CONTEXT.md`: current established conditions, accepted intentions and experience model, scoped rules, and evidence links.
 - `MILES_DECISIONS.md`: significant choices and status history.
 
 When a project already declares equivalent authoritative files, use those paths and record the mapping. Avoid silently creating competing records. Keep the two Miles files together so their relative links remain valid.
 
 Read relevant sections and linked decisions before asking for facts. Older decisions provide rationale; the current context supplies active scope. Examples and templates are instructional fixtures, never evidence about a real project.
+
+## Project facts and a shared understanding
+
+At first engagement or a material direction change, use [project-understanding.md](project-understanding.md) to synthesize the game. The existence of this file or a successful code read supplies no automatic readiness verdict.
+
+Preserve an accepted, connected summary of the world, player role, intended audience, core experience, supporting loops, and important priorities in Project Context. Reference the confirmed entries it draws on. Keep unknowns visible; unaccepted interpretations remain in the current brief. Accepted model rationale can persist with its causal predictions explicitly labeled as hypotheses. Reuse established authority and avoid asking the developer to confirm the same facts again.
 
 ## What earns a place in context
 
@@ -27,7 +33,7 @@ Record the *kind* of knowledge accurately:
 | Confirmed design intent | Construction uses fixed world points in the MVP. | An accepted rule; implementation may lag. |
 | Observed implementation | Build 42 exposes a drag handle. | An inspected, version-specific fact. |
 | Research finding | In study P-03, 3 of 6 participants tried the locked gate. | A bounded observation with method and sample. |
-| Hypothesis | The gate may look like the next objective. | A candidate explanation for the current brief. |
+| Hypothesis | The gate may look like the next objective. | Candidate explanations stay in the current brief; accepted design rationale may link the hypothesis with its research status intact. |
 
 Prefer durable constraints and intended language in current context. Link build inventories and research records where details change quickly. Label adopted audience assumptions as project intent, with a research status; confirmation by a developer does not turn them into measured audience facts.
 
@@ -77,3 +83,13 @@ Use the filesystem's safe-write facilities when available. This Markdown convent
 The initializer creates empty templates and project identity metadata. It neither interprets conversations nor promotes rules. It refuses existing target files and recognized legacy context files so the designer can resolve ownership deliberately.
 
 See the complete [lifecycle example](../examples/worked/context-lifecycle.md) for a local decision, scoped promotion, exception, and replacement.
+
+## Persist an experience model without inflating its evidence
+
+The accepted model belongs inside the existing Project Context. Preserve player goals, concrete quality definitions, organizing concepts, element responsibilities, and reusable property/rule relationships. Link the decision and its exact scope. A useful rationale explains how a condition affects the experience so future choices can be derived.
+
+“Make work feel manageable” can be a confirmed intent. “Pending-work cues help players choose their next action” remains a causal hypothesis. “Four of six observed participants independently found the station in test T-01” would be a scoped finding only after such a test actually occurs. These meanings remain separate in an accepted model.
+
+Use one authoritative record per rule; cross-reference rather than copying changing statements into several tables. Candidate concepts remain in the current brief or proposed decisions until accepted. A brief model can be plain prose with source and status; identifiers are useful when dependencies grow.
+
+When viewport, audience, creative priorities, or timing rules change, trace the affected concepts, functions, rules, and tests. Preserve unaffected knowledge and record which decision changed. See [Experience modeling](experience-modeling.md) and [Migration](../MIGRATION.md).

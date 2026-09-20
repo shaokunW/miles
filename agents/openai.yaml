@@ -1,4 +1,4 @@
 interface:
-  display_name: "Miles — Game Experience Designer"
-  short_description: "Player-centered game design with durable project context"
-  default_prompt: "Use $miles-game-experience-designer to review the current game experience. Read the active project's established context, recommend a concrete design, and keep proposals separate from confirmed project rules."
+  display_name: "Miles — Senior Game Experience Designer"
+  short_description: "Turn game intentions into executable experience design"
+  default_prompt: "Use $miles-game-experience-designer to understand this game and translate its intended experience into concrete design. Propose a connected model of goals, qualities, concepts, functions, and rules; explain relevant player consequences; separate implementation acceptance from experience validation; and preserve accepted project knowledge with its scope and evidence intact."

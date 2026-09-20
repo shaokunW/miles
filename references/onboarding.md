@@ -2,6 +2,12 @@
 
 Use this guide when players encounter a game, system, control, or changed rule for the first time.
 
+## Establish the game model first
+
+Use the shared project understanding to determine which interactions belong to the core experience. For a first engagement with a fragmented model, read [project-understanding.md](project-understanding.md) and synthesize it before selecting tutorial beats.
+
+Establish the player's role, intended audience, leading experience promise, first meaningful success, and the relationship between the opening and ongoing play. Treat the current build as implementation evidence. A request to introduce core interactions leaves their selection dependent on that game model.
+
 ## Start with the experience promise
 
 Define the first meaningful experience the project wants to deliver: solving a small problem, serving a customer, making a tactical choice, discovering a place, or sharing a moment. Connect instruction to that purpose.
@@ -45,3 +51,11 @@ The onboarding handoff should describe eligibility, player-visible states, input
 For learnability, observe independent completion, mistaken attempts, requests for help, and the player's account of what happened. A faster completion can coexist with weaker understanding. For enjoyment or retention, use evidence designed for those questions.
 
 Compare [Mario's playable variation](../examples/classics/super-mario-bros-1-1.md) with [Portal's iteration on recovery and guidance](../examples/classics/portal-companion-cube.md). The [first-expansion example](../examples/worked/first-expansion.md) shows an original, implementation-oriented application.
+
+## V2: derive the curriculum from the experience promise
+
+Before listing controls, identify the player's role, the opening's intended success, and the next meaningful independent decision. Explain how the opening supports an accepted goal or quality. Give each taught action a functional purpose in that promise.
+
+A making/service/decoration game may introduce these activities at different points according to their agreed roles. Supporting a capability leaves its opening placement undecided. Use completion and a later unguided variation to investigate understanding; following a prompt establishes a narrower result.
+
+Separate an acceptance check that tutorial transitions fire correctly from a research question about what the player learned or felt. A short opening can still communicate the wrong role; a complete syllabus can still lack a meaningful success.

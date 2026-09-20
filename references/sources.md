@@ -1,6 +1,8 @@
 # Source registry
 
-Last checked: **2026-09-20**.
+Registry date: **2026-09-20**.
+
+V2 review: PKG-01, PKG-02, REF-05, and REF-08 were reopened; REF-09 and REF-10 were added and their stated pages inspected. Other entries and their access notes are carried from the supplied V1.1 release record. V2 does not claim fresh inspection of every inherited source or a new viewing of its recordings/PDFs.
 
 This package contains original instructions, analyses, and examples. It links to reference material rather than bundling books, recordings, slides, screenshots, or game assets. Titles and names identify their respective works; no affiliation or endorsement is implied.
 
@@ -91,6 +93,22 @@ Guideline index: https://learn.microsoft.com/en-us/xbox/accessibility/guidelines
 Inspected: official guideline text.  
 Use: essential information communicated through appropriate alternatives.  
 Boundary: use the applicable current guidelines and actual testing for a project's accessibility review.
+
+### REF-09
+
+**Emotional Design: Why We Love (or Hate) Everyday Things.** Don Norman.
+URL: https://jnd.org/books/emotional-design-why-we-love-or-hate-everyday-things/
+Inspected for V2: author's overview and table of contents.
+Use: distinguish initial impression, use, and reflective meaning as design questions.
+Boundary: the full book and linked chapter PDFs were not inspected for this release. The package's project applications are original interpretations.
+
+### REF-10
+
+**The Double Diamond.** Design Council.
+URL: https://www.designcouncil.org.uk/resources/the-double-diamond/
+Inspected for V2: official framework description, including Discover, Define, Develop, and Deliver.
+Use: problem understanding, alternative concepts, small-scale tests, and iteration.
+Boundary: a process framework, with no evidence of this package's agent performance or a particular game's outcomes.
 
 ## Classic cases
 
