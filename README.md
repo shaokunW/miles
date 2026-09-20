@@ -31,9 +31,45 @@ Game memory belongs to the active game, outside this reusable skill folder. It i
 
 This package follows the [Agent Skills format](https://agentskills.io/specification). The optional Codex integration follows [OpenAI's skill documentation](https://developers.openai.com/codex/skills/), checked on the date above.
 
-### Codex: one repository
+### Install from GitHub (recommended)
 
-From the directory containing the extracted `miles-game-experience-designer` folder:
+With Node.js and npm installed, run:
+
+```bash
+npx skills add shaokunW/miles -g
+```
+
+The [Skills CLI](https://github.com/vercel-labs/skills) downloads Miles from GitHub and lets you choose which supported agents to install it for. `-g` installs it for your user, making it available across projects.
+
+To install only for Codex:
+
+```bash
+npx skills add shaokunW/miles -g -a codex
+```
+
+For installation in a single game repository, run this from that repository's root and omit `-g`:
+
+```bash
+npx skills add shaokunW/miles -a codex
+```
+
+To list the available skill without installing it:
+
+```bash
+npx skills add shaokunW/miles --list
+```
+
+The skill's invocation name is `miles-game-experience-designer`; `miles` is the GitHub repository name.
+
+### Manual installation for Codex
+
+Download and extract the repository or release archive, then rename the extracted folder to `miles-game-experience-designer`. Alternatively, clone it with that folder name:
+
+```bash
+git clone https://github.com/shaokunW/miles.git miles-game-experience-designer
+```
+
+For one game repository, run the following from the directory containing the `miles-game-experience-designer` folder:
 
 ```bash
 mkdir -p /path/to/game/.agents/skills
@@ -42,7 +78,7 @@ cp -R miles-game-experience-designer /path/to/game/.agents/skills/
 
 Use the active game's actual path. For an existing installation, review and replace the skill directory deliberately; retain the game's context files. Avoid nesting a second copy inside the existing skill directory.
 
-### Codex: user-wide installation
+For a user-wide installation instead:
 
 ```bash
 mkdir -p "$HOME/.agents/skills"
